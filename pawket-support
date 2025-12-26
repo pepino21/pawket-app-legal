@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawket Support</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 { color: #333; }
+        .contact { background: #f5f5f5; padding: 20px; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Pawket: Finance Pet - Support</h1>
+    
+    <h2>Need Help?</h2>
+    <p>We're here to help you get the most out of Pawket!</p>
+    
+    <h2>Frequently Asked Questions</h2>
+    
+    <h3>How do I scan a receipt?</h3>
+    <p>Tap the camera icon and take a photo of your receipt. Pawket will automatically extract the details.</p>
+    
+    <h3>How do I cancel my subscription?</h3>
+    <p>To cancel your subscription:
+        <ol>
+            <li>Open Settings on your iPhone</li>
+            <li>Tap your name at the top</li>
+            <li>Tap Subscriptions</li>
+            <li>Select Pawket</li>
+            <li>Tap Cancel Subscription</li>
+        </ol>
+    </p>
+    
+    <h3>Is my financial data secure?</h3>
+    <p>Yes! Your data is encrypted and stored securely. We never share your information with third parties.</p>
+    
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <p>For additional support, please email us at:</p>
+        <p><strong>support@pawket.finance</strong></p>
+        <p>We typically respond within 24 hours.</p>
+    </div>
+</body>
+</html>
