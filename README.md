@@ -1,13 +1,9 @@
 Legal Documents – Pawket
 
-📄 Privacy Policy  
-https://pepino21.github.io/pawket-app-legal/privacy-policy.html
+📄 Privacy Policy  - https://pepino21.github.io/pawket-app-legal/privacy-policy.html
 
-📄 Terms of Service  
-https://pepino21.github.io/pawket-app-legal/terms-of-service.html
+📄 Terms of Service  - https://pepino21.github.io/pawket-app-legal/terms-of-service.html
 
-📄 Support
-https://pepino21.github.io/pawket-app-legal/pawket-support.html
+📄 Support - https://pepino21.github.io/pawket-app-legal/pawket-support.html
 
-🗑️ Account Deletion
-https://pepino21.github.io/pawket-app-legal/delete-account-instructions.html
+🗑️ Account Deletion - https://pepino21.github.io/pawket-app-legal/delete-account-instructions.html
