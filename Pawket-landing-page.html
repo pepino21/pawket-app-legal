@@ -38,17 +38,6 @@
             transform: translateY(-100%);
         }
 
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
         .logo {
             display: flex;
             align-items: center;
@@ -77,10 +66,6 @@
             object-fit: cover;
         }
 
-        .nav-links {
-            display: none;
-        }
-
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -98,13 +83,13 @@
             animation: fadeInUp 1s ease;
         }
 
-        @keyframes fadeInLeft {
+        @keyframes fadeInUp {
             from {
-                transform: translateX(-50px);
+                transform: translateY(30px);
                 opacity: 0;
             }
             to {
-                transform: translateX(0);
+                transform: translateY(0);
                 opacity: 1;
             }
         }
@@ -123,6 +108,55 @@
             color: rgba(255, 255, 255, 0.95);
             margin-bottom: 0;
             line-height: 1.6;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeInUp 1.2s ease;
+            padding: 50px 0;
+        }
+
+        .phone-mockup-single {
+            width: 350px;
+            height: 700px;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border-radius: 50px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: floatSingle 3s ease-in-out infinite;
+        }
+
+        @keyframes floatSingle {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .phone-screen {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            background: #607bda;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: white;
+            overflow: hidden;
+        }
+
+        .phone-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .store-buttons {
@@ -159,14 +193,6 @@
             transform: translateY(0);
         }
 
-        .store-btn.app-store {
-            background: #000000;
-        }
-
-        .store-btn.play-store {
-            background: #000000;
-        }
-
         .store-icon {
             font-size: 32px;
             line-height: 1;
@@ -190,59 +216,7 @@
             line-height: 1.2;
         }
 
-        .hero-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: fadeInUp 1.2s ease;
-        }
-
-        @keyframes fadeInRight {
-            from {
-                transform: translateX(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        .phone-mockup {
-            width: 350px;
-            height: 700px;
-            background: linear-gradient(145deg, #ffffff, #f0f0f0);
-            border-radius: 50px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-            position: relative;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        .phone-screen {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            right: 20px;
-            bottom: 20px;
-            background: #607bda;
-            border-radius: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 80px;
-            color: white;
-        }
-
-        /* Features Section */
+        /* Features Section - Alternating Layout */
         .features {
             padding: 100px 50px;
             background: white;
@@ -253,74 +227,93 @@
             font-size: 48px;
             font-weight: 800;
             color: #333;
-            margin-bottom: 60px;
-            animation: fadeInUp 0.8s ease;
+            margin-bottom: 80px;
         }
 
-        @keyframes fadeInUp {
-            from {
-                transform: translateY(30px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+        .feature-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 80px;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto 120px;
         }
 
-        .feature-card {
-            background: linear-gradient(145deg, #f8f9ff, #e8ebff);
-            padding: 40px;
-            border-radius: 30px;
-            text-align: center;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(96, 123, 218, 0.1);
-            animation: fadeInUp 0.8s ease;
-            animation-fill-mode: both;
+        .feature-row.reverse {
+            flex-direction: row-reverse;
         }
 
-        .feature-card:nth-child(1) { animation-delay: 0.1s; }
-        .feature-card:nth-child(2) { animation-delay: 0.2s; }
-        .feature-card:nth-child(3) { animation-delay: 0.3s; }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(96, 123, 218, 0.2);
+        .feature-content {
+            flex: 1;
+            max-width: 500px;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 20px;
+        .feature-row.reverse .feature-content {
+            transform: translateX(50px);
+        }
+
+        .feature-row.visible .feature-content {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .feature-content h3 {
+            font-size: 42px;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .feature-content p {
+            font-size: 20px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .feature-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .feature-illustration {
+            width: 400px;
+            height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
-            color: white;
-            margin: 0 auto 20px;
-            box-shadow: 0 10px 25px rgba(96, 123, 218, 0.3);
+            font-size: 150px;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
         }
 
-        .feature-card h3 {
-            font-size: 24px;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 15px;
+        .feature-row.reverse .feature-illustration {
+            transform: translateX(-50px);
         }
 
-        .feature-card p {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.6;
+        .feature-row.visible .feature-illustration {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .feature-illustration:hover {
+            transform: translateX(0) scale(1.05);
+        }
+
+        .feature-row.reverse .feature-illustration:hover {
+            transform: translateX(0) scale(1.05);
+        }
+
+        .feature-illustration img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         /* CTA Section */
@@ -354,7 +347,6 @@
             font-size: 18px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
-            transform-style: preserve-3d;
         }
 
         .cta-button:hover {
@@ -405,7 +397,7 @@
                 font-size: 16px;
             }
 
-            .phone-mockup {
+            .phone-mockup-single {
                 width: 280px;
                 height: 560px;
                 border-radius: 40px;
@@ -413,7 +405,10 @@
 
             .phone-screen {
                 border-radius: 30px;
-                font-size: 60px;
+                top: 15px;
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
             }
 
             .features {
@@ -422,10 +417,32 @@
 
             .section-title {
                 font-size: 36px;
+                margin-bottom: 50px;
             }
 
-            .features-grid {
-                gap: 30px;
+            .feature-row {
+                flex-direction: column !important;
+                gap: 40px;
+                margin-bottom: 80px;
+                text-align: center;
+            }
+
+            .feature-content {
+                max-width: 100%;
+            }
+
+            .feature-content h3 {
+                font-size: 32px;
+            }
+
+            .feature-content p {
+                font-size: 18px;
+            }
+
+            .feature-illustration {
+                width: 280px;
+                height: 280px;
+                font-size: 120px;
             }
 
             .cta-section {
@@ -477,8 +494,10 @@
         </div>
         
         <div class="hero-image">
-            <div class="phone-mockup">
-                <div class="phone-screen">🐾</div>
+            <div class="phone-mockup-single">
+                <div class="phone-screen">
+                    <img src="https://i.imgur.com/oEWsHSK.png" alt="Pawket App Screenshot">
+                </div>
             </div>
         </div>
 
@@ -511,21 +530,37 @@
     <!-- Features Section -->
     <section class="features" id="features">
         <h2 class="section-title">Why You'll Love Pawket</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
+        
+        <!-- Feature 1 - Image on Right -->
+        <div class="feature-row">
+            <div class="feature-content">
                 <h3>Smart Budgeting</h3>
-                <p>Set budgets and watch your pet grow happier as you save money. Turn financial goals into a fun game!</p>
+                <p>Set budgets and watch your pet grow happier as you save money. Turn financial goals into a fun game! Every dollar saved brings you closer to leveling up your adorable companion.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
+            <div class="feature-visual">
+                <div class="feature-illustration">💰</div>
+            </div>
+        </div>
+
+        <!-- Feature 2 - Image on Left -->
+        <div class="feature-row reverse">
+            <div class="feature-content">
                 <h3>Expense Tracking</h3>
-                <p>Track every expense with ease. Snap receipts, categorize spending, and see where your money goes.</p>
+                <p>Track every expense with ease. Snap receipts, categorize spending, and see where your money goes. Your pet helps you stay accountable and celebrates your smart spending choices.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎯</div>
+            <div class="feature-visual">
+                <div class="feature-illustration">📊</div>
+            </div>
+        </div>
+
+        <!-- Feature 3 - Image on Right -->
+        <div class="feature-row">
+            <div class="feature-content">
                 <h3>Goal Setting</h3>
-                <p>Set financial goals and watch your progress in real-time. Your pet celebrates every milestone with you!</p>
+                <p>Set financial goals and watch your progress in real-time. Your pet celebrates every milestone with you! Whether it's saving for a vacation or building an emergency fund, make it fun.</p>
+            </div>
+            <div class="feature-visual">
+                <div class="feature-illustration">🎯</div>
             </div>
         </div>
     </section>
@@ -551,17 +586,15 @@
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
             if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // Scrolling down
                 navbar.classList.add('hidden');
             } else {
-                // Scrolling up
                 navbar.classList.remove('hidden');
             }
             
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         });
 
-        // Add scroll animation
+        // Add scroll animation for features with slide-in effects
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -570,14 +603,13 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('visible');
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card').forEach(card => {
-            observer.observe(card);
+        document.querySelectorAll('.feature-row').forEach(row => {
+            observer.observe(row);
         });
 
         // Smooth scroll
