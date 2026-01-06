@@ -166,6 +166,13 @@
             width: 100%;
         }
 
+        .waitlist-note {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
         .waitlist-form {
             display: flex;
             gap: 12px;
@@ -198,40 +205,69 @@
             color: #999;
         }
 
+        .waitlist-btn-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
         .waitlist-btn {
-            padding: 16px 40px;
-            background: white;
+            padding: 18px 50px;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
             color: #607bda;
             border: none;
-            border-radius: 12px;
-            font-size: 18px;
+            border-radius: 16px;
+            font-size: 20px;
             font-weight: 800;
             font-family: 'Nunito', sans-serif;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            white-space: nowrap;
+            box-shadow: 
+                0 8px 15px rgba(0, 0, 0, 0.2),
+                inset 0 -4px 8px rgba(0, 0, 0, 0.1),
+                inset 0 4px 8px rgba(255, 255, 255, 0.8);
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .waitlist-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.5), transparent);
+            border-radius: 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .waitlist-btn:hover:not(:disabled) {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-            background: #f0f0f0;
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 
+                0 12px 25px rgba(0, 0, 0, 0.3),
+                inset 0 -4px 8px rgba(0, 0, 0, 0.1),
+                inset 0 4px 8px rgba(255, 255, 255, 0.9);
+        }
+
+        .waitlist-btn:hover:not(:disabled)::before {
+            opacity: 1;
         }
 
         .waitlist-btn:active:not(:disabled) {
-            transform: translateY(-1px);
+            transform: translateY(-1px) scale(1);
+            box-shadow: 
+                0 6px 12px rgba(0, 0, 0, 0.2),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.15),
+                inset 0 2px 4px rgba(255, 255, 255, 0.7);
         }
 
         .waitlist-btn:disabled {
-            opacity: 0.6;
+            opacity: 0.7;
             cursor: not-allowed;
-        }
-
-        .waitlist-note {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.9);
-            margin-top: 10px;
+            transform: translateY(-1px);
         }
 
         .success-message {
@@ -446,7 +482,8 @@
             }
 
             .waitlist-btn {
-                width: 100%;
+                font-size: 18px;
+                padding: 16px 40px;
             }
 
             .phone-mockup-single {
@@ -554,6 +591,7 @@
         </div>
 
         <div class="waitlist-container">
+            <p class="waitlist-note">Be the first to know when Pawket launches!</p>
             <form class="waitlist-form" id="waitlistForm">
                 <input 
                     type="text" 
@@ -570,11 +608,12 @@
                     required
                     autocomplete="email"
                 >
-                <button type="submit" class="waitlist-btn" id="submitBtn">
-                    Join the Waitlist 🚀
-                </button>
+                <div class="waitlist-btn-container">
+                    <button type="submit" class="waitlist-btn" id="submitBtn">
+                        Join the Waitlist 🚀
+                    </button>
+                </div>
             </form>
-            <p class="waitlist-note">Be the first to know when Pawket launches! We'll never spam you. 💜</p>
             <div id="successMessage" class="success-message hidden">
                 <span class="emoji">🎉</span>
                 You're on the list! We'll notify you when Pawket launches.
