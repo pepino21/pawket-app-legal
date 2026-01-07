@@ -23,19 +23,21 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 50px;
+            padding: 12px 50px;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: rgba(102, 126, 234, 0.95);
-            backdrop-filter: blur(10px);
+            background: transparent;
             z-index: 1000;
-            transition: transform 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: 0px solid rgba(255, 255, 255, 0);
+            transition: all 0.3s ease;
         }
 
-        nav.hidden {
-            transform: translateY(-100%);
+        nav.scrolled {
+            background: rgba(102, 126, 234, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
@@ -365,39 +367,55 @@
             align-items: center;
         }
 
-        .feature-illustration {
-            width: 400px;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 150px;
+        .feature-phone-mockup {
+            width: 280px;
+            height: 560px;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border-radius: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            position: relative;
             opacity: 0;
             transform: translateX(50px);
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
         }
 
-        .feature-row.reverse .feature-illustration {
+        .feature-row.reverse .feature-phone-mockup {
             transform: translateX(-50px);
         }
 
-        .feature-row.visible .feature-illustration {
+        .feature-row.visible .feature-phone-mockup {
             opacity: 1;
             transform: translateX(0);
         }
 
-        .feature-illustration:hover {
-            transform: translateX(0) scale(1.05);
+        .feature-phone-mockup:hover {
+            transform: translateX(0) translateY(-8px);
         }
 
-        .feature-row.reverse .feature-illustration:hover {
-            transform: translateX(0) scale(1.05);
+        .feature-row.reverse .feature-phone-mockup:hover {
+            transform: translateX(0) translateY(-8px);
         }
 
-        .feature-illustration img {
+        .feature-phone-screen {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            color: white;
+            overflow: hidden;
+        }
+
+        .feature-phone-screen img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
         }
 
         /* CTA Section */
@@ -453,7 +471,7 @@
         /* Mobile Responsive */
         @media (max-width: 768px) {
             nav {
-                padding: 15px 20px;
+                padding: 10px 20px;
             }
 
             .hero {
@@ -528,10 +546,19 @@
                 font-size: 18px;
             }
 
-            .feature-illustration {
-                width: 280px;
-                height: 280px;
-                font-size: 120px;
+            .feature-phone-mockup {
+                width: 220px;
+                height: 440px;
+                border-radius: 35px;
+            }
+
+            .feature-phone-screen {
+                border-radius: 25px;
+                font-size: 70px;
+                top: 12px;
+                left: 12px;
+                right: 12px;
+                bottom: 12px;
             }
 
             .cta-section {
@@ -626,36 +653,42 @@
     <section class="features" id="features">
         <h2 class="section-title">Why You'll Love Pawket</h2>
         
-        <!-- Feature 1 - Goal Setting (Image on Right) -->
+        <!-- Feature 1 - Goal Setting (Phone on Right) -->
         <div class="feature-row">
             <div class="feature-content">
                 <h3>Goal Setting</h3>
                 <p>Set financial goals and watch your progress in real-time. Your pet celebrates every milestone with you! Whether it's saving for a vacation or building an emergency fund, make it fun.</p>
             </div>
             <div class="feature-visual">
-                <div class="feature-illustration">🎯</div>
+                <div class="feature-phone-mockup">
+                    <div class="feature-phone-screen">🎯</div>
+                </div>
             </div>
         </div>
 
-        <!-- Feature 2 - Expense Tracking (Image on Left) -->
+        <!-- Feature 2 - Income & Expense Tracking (Phone on Left) -->
         <div class="feature-row reverse">
             <div class="feature-content">
-                <h3>Expense Tracking</h3>
-                <p>Track every expense with ease. Snap receipts, categorize spending, and see where your money goes. Your pet helps you stay accountable and celebrates your smart spending choices.</p>
+                <h3>Income & Expense Tracking</h3>
+                <p>Monitor both your income and expenses in one place. Snap receipts, log earnings, and categorize every transaction. See exactly where your money comes from and where it goes to make smarter financial decisions.</p>
             </div>
             <div class="feature-visual">
-                <div class="feature-illustration">📊</div>
+                <div class="feature-phone-mockup">
+                    <div class="feature-phone-screen">📊</div>
+                </div>
             </div>
         </div>
 
-        <!-- Feature 3 - Smart Budgeting (Image on Right) -->
+        <!-- Feature 3 - Detailed Analytics (Phone on Right) -->
         <div class="feature-row">
             <div class="feature-content">
-                <h3>Smart Budgeting</h3>
-                <p>Set budgets and watch your pet grow happier as you save money. Turn financial goals into a fun game! Every dollar saved brings you closer to leveling up your adorable companion.</p>
+                <h3>Detailed Analytics</h3>
+                <p>Gain powerful insights into your spending patterns with beautiful charts and reports. Track trends over time, identify areas to improve, and understand your financial habits with data-driven clarity.</p>
             </div>
             <div class="feature-visual">
-                <div class="feature-illustration">💰</div>
+                <div class="feature-phone-mockup">
+                    <div class="feature-phone-screen">💰</div>
+                </div>
             </div>
         </div>
     </section>
@@ -673,6 +706,17 @@
     </footer>
 
     <script>
+        // Navbar scroll effect
+        const navbar = document.querySelector('nav');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
         // Google Sheets API URL
         const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyD4Oor7dINmsGgMAaTW_gVfQnuDgkw-MnJSAWkrWZKtHeeYZY_d45iVrAaMNtW4Wkp/exec';
 
@@ -742,22 +786,6 @@
                 errorMessage.classList.add('hidden');
             }, 5000);
         }
-
-        // Auto-hide navbar on scroll up
-        let lastScrollTop = 0;
-        const navbar = document.querySelector('nav');
-        
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                navbar.classList.add('hidden');
-            } else {
-                navbar.classList.remove('hidden');
-            }
-            
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-        });
 
         // Add scroll animation for features with slide-in effects
         const observerOptions = {
