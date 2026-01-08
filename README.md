@@ -11,3 +11,5 @@ Support Documents - Pawket
 🗑️ Account Deletion - https://pepino21.github.io/pawket-app-legal/delete-account-instructions.html
 
 Landing Pages - Pawket
+
+Waitlist - https://pepino21.github.io/pawket-app-legal/waitlist.html
